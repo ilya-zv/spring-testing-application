@@ -1,5 +1,6 @@
 package ru.appTesting.spring.service;
 
+import org.springframework.stereotype.Service;
 import ru.appTesting.spring.dao.QuestionDao;
 import ru.appTesting.spring.domain.Person;
 import ru.appTesting.spring.domain.Question;
@@ -8,15 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-
+@Service
 public class TestServiceImpl implements TestService {
 
-    List<Question> testQuestionList;
-    IOService ioService;
-    QuestionDao questionDao;
-    List<String> answer;
-    int count;
-    String[] variant = {"a", "b", "c", "d"};
+    private List<Question> testQuestionList;
+    private IOService ioService;
+    private QuestionDao questionDao;
+    private List<String> answer;
+    private int count;
+    private String[] variant = {"a", "b", "c", "d"};
 
 
     public TestServiceImpl(QuestionDao questionDao, IOService ioService) {
@@ -27,7 +28,6 @@ public class TestServiceImpl implements TestService {
     @Override
     public void runTest(Person person) {
         answer = new ArrayList<>();
-        System.out.println("Тест начался!_________________");
         testQuestionList = questionDao.getQuestions();
         //starting a test cycle
         for (int i = 1; i < testQuestionList.size(); i++) {
@@ -53,7 +53,6 @@ public class TestServiceImpl implements TestService {
                 count++;
             }
         }
-        System.out.println("Тест завершен!_________________");
         System.out.println(person.getFirstName() +" "+ person.getLastName() + " благодарим за участие");
         System.out.println("Правильных ответов " + count);
 

@@ -1,7 +1,9 @@
 package ru.appTesting.spring.service;
 
+import org.springframework.stereotype.Service;
 import ru.appTesting.spring.domain.Person;
 
+@Service
 public class RunServiceImpl implements RunService {
     IOService ioService;
     PersonService personService;
@@ -23,8 +25,6 @@ public class RunServiceImpl implements RunService {
         String lastName = ioService.read();
 
         Person person = personService.get(firstName, lastName);
-
         testService.runTest(person);
-
     }
 }

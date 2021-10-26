@@ -1,10 +1,14 @@
 package ru.appTesting.spring.service;
 
+import org.springframework.stereotype.Service;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+@Service
 public class IOServiceImpl implements IOService {
+
     @Override
     public String read() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

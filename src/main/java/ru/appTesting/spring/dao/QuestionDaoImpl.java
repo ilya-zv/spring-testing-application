@@ -1,6 +1,9 @@
 package ru.appTesting.spring.dao;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import ru.appTesting.spring.domain.Question;
 
 import java.io.BufferedReader;
@@ -10,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
+@PropertySource("classpath:file.properties")
 public class QuestionDaoImpl implements QuestionDao {
 
     @Value("${nameTestQuestionFile}")

@@ -6,7 +6,6 @@ import ru.appTesting.spring.dao.QuestionDaoImpl;
 import ru.appTesting.spring.service.*;
 
 @Configuration
-@ComponentScan("ru.appTesting.spring")
 @PropertySource("classpath:file.properties")
 public class Config {
 

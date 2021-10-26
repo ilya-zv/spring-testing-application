@@ -38,5 +38,4 @@ public class Config {
     public TestService testService() {
         return new TestServiceImpl(questionDao(), ioService());
     }
-
 }
